@@ -25,10 +25,12 @@
   background-color: transparent;
   border: none;
 
-  
+  @media (min-width: 720px) {
+    display: none;
+  }
 }
 
-.menuActions{
+.menuActions {
   display: flex;
   gap: 3rem;
   align-items: center;
