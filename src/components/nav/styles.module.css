@@ -1,0 +1,20 @@
+.nav {
+    display: flex;
+  gap: 3.2rem;
+  justify-content: space-between;
+}
+
+.navLink {
+  color: #282828;
+  font-size: 2rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.navLink:hover {
+  color: #0d50ff;
+}
+
+.navLink.active {
+  color: #0d50ff;
+}

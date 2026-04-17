@@ -1,0 +1,35 @@
+.container {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 1.6rem;
+
+  @media (max-width: 720px) {
+    padding: 1.5rem 1.6rem;
+  }
+}
+
+.navWrapper {
+  @media (max-width: 720px) {
+    display: none;
+  }
+}
+
+.HamburgerMenuIcon {
+  background-color: transparent;
+  border: none;
+
+  
+}
+
+.menuActions{
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
