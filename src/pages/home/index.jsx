@@ -1,13 +1,14 @@
 import styles from './styles.module.css';
 import Hero from '../../components/hero';
 import Categories from '../../components/categories';
-import Headline from '../../components/headline';
+import GetDiscount from '../../components/getDiscount';
 
 function Home() {
   return (
     <div className={styles.home}>
       <Hero />
       <Categories />
+      <GetDiscount />
     </div>
   );
 }

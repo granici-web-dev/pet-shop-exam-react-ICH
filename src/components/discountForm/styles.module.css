@@ -1,0 +1,12 @@
+.discountFormInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: 3.2rem;
+}
+
+.errorMesage {
+  color: red;
+  font-size: 1.6rem;
+}
+
