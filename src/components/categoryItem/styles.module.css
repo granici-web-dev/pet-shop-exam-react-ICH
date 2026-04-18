@@ -1,0 +1,17 @@
+.categoryItem {
+  text-align: center;
+}
+
+.categoryItemImg {
+  width: 100%;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 1.6rem;
+
+  @media (max-width: 386px) {
+    font-size: 1.6rem;
+  }
+}

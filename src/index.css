@@ -18,7 +18,13 @@ body {
 
 
 a {
-  text-decoration: none;;
+  text-decoration: none;
+  color: #282828;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #0D50FF;
 }
 
 ul {

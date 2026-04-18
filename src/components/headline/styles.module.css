@@ -1,0 +1,15 @@
+.headline {
+  font-size: 6.4rem;
+  font-weight: 700;
+  color: #282828;
+  line-height: 1.1;
+  padding-right: 2rem;
+
+  @media (max-width: 584px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 384px) {
+    font-size: 2rem;
+  }
+}
