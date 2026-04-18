@@ -26,7 +26,7 @@ export const validationFormInputs = {
   email: {
     required: {
       value: true,
-      message: 'Email name is required!',
+      message: 'Email is required!',
     },
     pattern: {
       value:

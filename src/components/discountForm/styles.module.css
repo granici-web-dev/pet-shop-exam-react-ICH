@@ -5,8 +5,10 @@
   margin-bottom: 3.2rem;
 }
 
-.errorMesage {
-  color: red;
+.errorMessage {
+  color: #fff;
+  background-color: rgba(255, 0 , 0, 0.5);
   font-size: 1.6rem;
+  padding: 0.4rem 0.4rem;
 }
 

@@ -2,7 +2,10 @@ import styles from './styles.module.css';
 import { useForm } from 'react-hook-form';
 import Input from '../ui/input';
 import { validationFormInputs } from '../../validator/validatorGetDiscrount';
-import SecondaryButton from '../ui/secondaryButton'
+import SecondaryButton from '../ui/secondaryButton';
+import axios from 'axios';
+
+const API_URL = 'http://127.0.0.1:3333';
 
 function DiscountForm() {
   const { name, phone, email } = validationFormInputs;
@@ -10,11 +13,22 @@ function DiscountForm() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({ mode: 'onChange' });
 
+  const getDiscount = async (data) => {
+    try {
+      const response = await axios.post(`${API_URL}/sale/send`, data);
+      console.log(response.data);
+      reset();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
-    <form className={styles.discountForm}>
+    <form className={styles.discountForm} onSubmit={handleSubmit(getDiscount)}>
       <div className={styles.discountFormInputs}>
         <div>
           <Input
@@ -33,7 +47,7 @@ function DiscountForm() {
             id={'phone'}
             name={'phone'}
             placeholder={'Phone number'}
-            {...register('name', phone)}
+            {...register('phone', phone)}
           />
           {errors.phone && <p className={styles.errorMessage}>{errors.phone.message}</p>}
         </div>
@@ -44,7 +58,7 @@ function DiscountForm() {
             id={'email'}
             name={'email'}
             placeholder={'Email'}
-            {...register('name', email)}
+            {...register('email', email)}
           />
           {errors.email && <p className={styles.errorMessage}>{errors.email.message}</p>}
         </div>

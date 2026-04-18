@@ -4,9 +4,16 @@
   padding: 1.6rem 3.2rem;
   border-radius: 0.4rem;
   width: 100%;
+  color: #fff;
+  font-size: 2rem;
 }
 
 .customInput::placeholder{
   font-size: 2rem;
   color: #fff;
+}
+
+.customInput:-webkit-autofill {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
 }
