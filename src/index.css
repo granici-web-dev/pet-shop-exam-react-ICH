@@ -23,9 +23,9 @@ a {
   transition: all 0.3s ease;
 }
 
-a:hover {
+/* a:hover {
   color: #0D50FF;
-}
+} */
 
 ul {
   list-style: none;
