@@ -7,7 +7,7 @@ function DiscountFilter({ filters , setFilters}) {
       <span className={styles.discountFilterTitle}>Discounted items</span>
       <Input
         type={'checkbox'}
-        placechecked={filters.discounted}
+        checked={filters.discounted}
         className={styles.discountFilterCheckbox}
         onChange={(e) => setFilters({ ...filters, discounted: e.target.checked })}
       />

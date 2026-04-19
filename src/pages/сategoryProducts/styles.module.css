@@ -25,12 +25,3 @@
 .titleDiv {
   margin-top: 4rem;
 }
-
-.filtersDiv {
-  display: flex;
-  flex-direction: row;
-
-  @media (max-width: 724px) {
-    flex-direction: column;
-  }
-}
