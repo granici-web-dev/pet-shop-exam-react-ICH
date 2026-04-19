@@ -1,0 +1,22 @@
+.sortFilterTitle {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.sortFilter {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.sortFilterSelect {
+  padding: 1.6rem 3.2rem 1.6rem 1.6rem;
+  border-radius: 0.8rem;
+  border: 1px solid #DDDDDD;
+  font-size: 1.6rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23282828' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+}

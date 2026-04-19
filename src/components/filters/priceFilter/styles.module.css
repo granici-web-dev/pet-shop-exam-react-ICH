@@ -1,0 +1,22 @@
+.priceFilter {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.filterInput {
+  border: 1px solid #dddddd;
+  max-width: 16rem;
+  width: 100%;
+  color: #282828;
+}
+
+.filterInput::placeholder {
+  color: #8b8b8b;
+}
+
+.priceFilterTitle {
+  font-size: 2rem;
+  font-weight: 600;
+}
