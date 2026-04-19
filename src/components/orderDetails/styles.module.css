@@ -67,3 +67,17 @@
   background-color: #0a40cc;
 }
 
+.customInput {
+  color: #282828;
+}
+
+.customInput::placeholder {
+  color: #8B8B8B;
+  font-size: 2rem;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 0.4rem;
+}
