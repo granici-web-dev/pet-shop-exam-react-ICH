@@ -1,0 +1,57 @@
+.container {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+  margin-top: 4rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.6rem;
+  }
+}
+
+.contactGrid {
+  div {
+    background-color: #f1f3f4;
+    padding: 3.2rem;
+    border-radius: 1.6rem;
+
+    span {
+      font-size: 2rem;
+      color: #8b8b8b;
+      line-height: 1.3;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 4rem;
+      font-weight: 600;
+      margin-top: 1.6rem;
+
+      @media (max-width: 968px) {
+        font-size: 3rem;
+      }
+    }
+
+    ul {
+      display: flex;
+      gap: 1.6rem;
+      margin-top: 1.6rem;
+    }
+  }
+}
+
+.map {
+  width: 100%;
+  height: 40rem;
+  border: none;
+  border-radius: 1.6rem;
+  margin: 3.2rem 0;
+}

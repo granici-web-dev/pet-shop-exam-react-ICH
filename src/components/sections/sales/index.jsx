@@ -33,14 +33,19 @@ function Sales() {
           <span className={styles.line} />
           <LinkButton onClick={() => setNavigate('/sales')} title={'All sales '} />
         </div>
-        <div className={styles.productsCards}>
-          {products
-            ?.filter((product) => product.discont_price !== null)
-            .slice(0, 4)
-            .map((product) => (
-              <ProductItem key={product.id} product={product} />
-            ))}
-        </div>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <div className={styles.productsCards}>
+            {products
+              ?.filter((product) => product.discont_price !== null)
+              .slice(0, 4)
+              .map((product) => (
+                <ProductItem key={product.id} product={product} />
+              ))}
+              {isError && <p className={styles.errorMessage}>{message}</p>}
+          </div>
+        )}
       </div>
     </section>
   );
