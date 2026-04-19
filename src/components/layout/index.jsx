@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import styles from './styles.module.css';
-import Header from '../header';
-import Footer from '../footer'
+import Header from '../sections/header';
+import Footer from '../sections/footer';
 
 function Layout() {
   return (

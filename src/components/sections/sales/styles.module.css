@@ -1,0 +1,48 @@
+.container {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+}
+
+.sales {
+  padding: 8rem 0;
+
+  @media (max-width: 786px) {
+    padding: 4.8rem 0;
+  }
+}
+
+.productsWrapper {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line {
+  height: 1px;
+  flex: 1;
+  background-color: #e5e7eb;
+}
+
+.productsCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.2rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+  }
+
+  @media (max-width: 568px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.6rem;
+  }
+}
+
+.errorMessage {
+  color: red;
+  font-size: 1.6rem;
+}

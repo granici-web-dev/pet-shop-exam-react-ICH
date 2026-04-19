@@ -1,11 +1,11 @@
 import styles from './styles.module.css';
 import { NavLink } from 'react-router-dom';
 
-import Nav from '../nav';
+import Nav from '../../nav';
 
-import Logo from '../../assets/logo.svg';
-import Cart from '../../assets/icons/cart-empty.svg';
-import HamburgerMenu from '../../assets/icons/hamburger-menu.svg'
+import Logo from '../../../assets/logo.svg';
+import Cart from '../../../assets/icons/cart-empty.svg';
+import HamburgerMenu from '../../../assets/icons/hamburger-menu.svg'
 
 function Header() {
   return (

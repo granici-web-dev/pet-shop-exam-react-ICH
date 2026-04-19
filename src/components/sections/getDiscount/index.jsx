@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
-import DiscountImage from '../../assets/images/get-discount-section-img.png';
-import DiscountForm from '../discountForm';
+import DiscountImage from '../../../assets/images/get-discount-section-img.png';
+import DiscountForm from '../../discountForm';
 
 function GetDiscount() {
   return (

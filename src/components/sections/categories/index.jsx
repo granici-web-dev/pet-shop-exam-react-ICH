@@ -1,10 +1,10 @@
-import Headline from '../headline';
+import Headline from '../../headline';
 import styles from './styles.module.css';
-import LinkButton from '../../components/ui/linkButton';
+import LinkButton from '../../ui/linkButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchCategories } from '../../redux/slices/categoriesSlice';
-import CategoryItem from '../categoryItem';
+import { fetchCategories } from '../../../redux/slices/categoriesSlice';
+import CategoryItem from '../../categoryItem';
 import { useNavigate } from 'react-router-dom';
 
 function Categories() {
