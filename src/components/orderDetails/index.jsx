@@ -1,8 +1,10 @@
 import styles from './styles.module.css';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearCart } from '../../redux/slices/cartSlice';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import OrderModal from '../../components/ui/orderModal';
 
 const BASE_URL = 'http://127.0.0.1:3333';
 
@@ -10,6 +12,7 @@ function OrderDetails() {
   const dispatch = useDispatch();
   const { items } = useSelector((state) => state.cart);
   const { register, handleSubmit, reset } = useForm();
+  const [showModal, setShowModal] = useState(false);
 
   const totalItems = items.reduce((sum, item) => sum + item.count, 0);
   const totalPrice = items.reduce((sum, item) => {
@@ -22,7 +25,7 @@ function OrderDetails() {
       await axios.post(`${BASE_URL}/order/send`, { ...data, items });
       dispatch(clearCart());
       reset();
-      alert('Order placed successfully!');
+      setShowModal(true);
     } catch (error) {
       console.error(error);
     }
@@ -44,6 +47,7 @@ function OrderDetails() {
           Order
         </button>
       </form>
+      {showModal && <OrderModal onClose={() => setShowModal(false)} />}
     </div>
   );
 }
