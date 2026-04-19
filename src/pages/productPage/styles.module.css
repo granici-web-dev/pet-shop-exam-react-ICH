@@ -159,3 +159,8 @@
     font-size: 3.2rem;
   }
 }
+
+.counter button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

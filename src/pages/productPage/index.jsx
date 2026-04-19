@@ -6,6 +6,7 @@ import { fetchCategories } from '../../redux/slices/categoriesSlice';
 import Breadcrumbs from '../../components/ui/breadCrumbs';
 import Button from '../../components/ui/button'
 import styles from './styles.module.css';
+import { addToCart } from '../../redux/slices/cartSlice';
 
 function ProductPage() {
   const { productId } = useParams();
@@ -15,12 +16,16 @@ function ProductPage() {
   const [count, setCount] = useState(1);
   const [showFullDesc, setShowFullDesc] = useState(false);
 
+  const { items } = useSelector((state) => state.cart);
+
+  const product = products?.find((p) => p.id === Number(productId));
+  const isInCart = items.some((item) => item.id === product?.id);
+
   useEffect(() => {
     dispatch(fetchProducts());
     dispatch(fetchCategories());
   }, [dispatch]);
 
-  const product = products?.find((p) => p.id === Number(productId));
   const productCategory = category?.find((c) => c.id === product?.categoryId);
 
   if (!product) return <p>Loading...</p>;
@@ -69,11 +74,22 @@ function ProductPage() {
 
           <div className={styles.cartControls}>
             <div className={styles.counter}>
-              <button onClick={() => setCount(Math.max(1, count - 1))}>−</button>
+              <button disabled={isInCart} onClick={() => setCount(Math.max(1, count - 1))}>
+                −
+              </button>
               <span>{count}</span>
-              <button onClick={() => setCount(count + 1)}>+</button>
+              <button disabled={isInCart} onClick={() => setCount(count + 1)}>
+                +
+              </button>
             </div>
-            <Button className={styles.addToCart} title={'Add to cart'} />
+            <Button
+              className={styles.addToCart}
+              title={isInCart ? 'Added' : 'Add to cart'}
+              isAdded={isInCart}
+              onClick={() => {
+                if (!isInCart) dispatch(addToCart({ ...product, count }));
+              }}
+            />
           </div>
 
           <div className={styles.description}>

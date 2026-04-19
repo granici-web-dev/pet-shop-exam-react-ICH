@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 import Nav from '../../nav';
 
 import Logo from '../../../assets/logo.svg';
-import Cart from '../../../assets/icons/cart-empty.svg';
-import HamburgerMenu from '../../../assets/icons/hamburger-menu.svg'
+import HamburgerMenu from '../../../assets/icons/hamburger-menu.svg';
+import CartBadge from '../../ui/cartBadge';
 
 function Header() {
   return (
@@ -21,9 +21,7 @@ function Header() {
             <Nav />
           </div>
           <div className={styles.menuActions}>
-            <NavLink to={'/cart'}>
-              <img src={Cart} alt="Cart" />
-            </NavLink>
+            <CartBadge />
             <button className={styles.HamburgerMenuIcon}>
               <img src={HamburgerMenu} alt="Menu" />
             </button>

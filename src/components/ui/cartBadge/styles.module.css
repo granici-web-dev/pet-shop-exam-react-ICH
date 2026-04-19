@@ -1,0 +1,20 @@
+.cartLink {
+  position: relative;
+  display: inline-flex;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -0.4rem;
+  left: -0.4rem;
+  background-color: #0d50ff;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  min-width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
