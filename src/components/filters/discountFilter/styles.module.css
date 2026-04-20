@@ -10,8 +10,27 @@
   font-weight: 600;
 }
 
-.discountFilterCheckbox {
-  width: 3.6rem;
-  height: 3.6rem;
-  border: 1px solid #DDDDDD;
+.checkboxWrapper {
+  cursor: pointer;
+  display: flex;
+}
+
+.hiddenCheckbox {
+  display: none;
+}
+
+.customCheckbox {
+  width: 4.4rem;
+  height: 4.4rem;
+  border: 2px solid #dddddd;
+  border-radius: 0.8rem;
+  transition: all 0.2s;
+}
+
+.hiddenCheckbox:checked + .customCheckbox {
+  background-color: #0d50ff;
+  border-color: #0d50ff;
+  background-image: url("../../../assets//icons//check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }

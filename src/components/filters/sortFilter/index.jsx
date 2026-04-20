@@ -9,7 +9,6 @@ function SortFilter({ filters, setFilters }) {
         className={styles.sortFilterSelect}
         onChange={(e) => setFilters({ ...filters, sort: e.target.value })}>
         <option value="default">by default</option>
-        <option value="newest">newest</option>
         <option value="desc">price: high-low</option>
         <option value="asc">price: low-high</option>
       </select>

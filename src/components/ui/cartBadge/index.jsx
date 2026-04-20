@@ -5,7 +5,7 @@ import cartIcon from '../../../assets/icons/cart-empty.svg';
 
 function CartBadge() {
   const { items } = useSelector((state) => state.cart);
-  const totalItems = items.reduce((sum, item) => sum + item.count, 0);
+  const totalItems = items.length;
 
   return (
     <Link to="/cart" className={styles.cartLink}>
