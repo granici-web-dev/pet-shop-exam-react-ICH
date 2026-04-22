@@ -13,7 +13,7 @@ function Breadcrumbs({ items }) {
           ) : (
             <span className={styles.breadcrumbCurrent}>{item.title}</span>
           )}
-          {index < items.length - 1 && <span className={styles.separator} />}
+          {index < items.length - 1 && <span className={styles.line} />}
         </span>
       ))}
     </div>
