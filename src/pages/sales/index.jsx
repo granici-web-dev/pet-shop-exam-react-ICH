@@ -58,7 +58,6 @@ function Sales() {
           {isError && <p className={styles.errorMessage}>{message}</p>}
         </div>
       )}
-      {isError && <p className={styles.errorMessage}>{message}</p>}
     </div>
   );
 }

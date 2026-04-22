@@ -6,8 +6,7 @@ import { validationFormInputs } from '../../validator/validatorGetDiscrount';
 import Input from '../ui/input';
 import Button from '../ui/button';
 import axios from 'axios';
-
-const BASE_URL = 'http://127.0.0.1:3333';
+import { BASE_URL } from '../../constants/config';
 
 function OrderDetails({ onOrderSuccess }) {
   const dispatch = useDispatch();
@@ -74,7 +73,7 @@ function OrderDetails({ onOrderSuccess }) {
           />
           {errors.email && <p className={styles.errorMessage}>{errors.email.message}</p>}
         </div>
-        <Button title="Order" className={styles.orderBtn} />
+        <Button type={'submit'} title="Order" className={styles.orderBtn} />
       </form>
     </div>
   );

@@ -5,7 +5,7 @@ const API_URL = 'http://127.0.0.1:3333';
 
 export const fetchCategories = createAsyncThunk(
   'category/fetchCategories',
-  async (_, { fulfillWithValue, rejectWithValue }) => {
+  async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${API_URL}/categories/all`);
 
@@ -14,7 +14,7 @@ export const fetchCategories = createAsyncThunk(
         throw new Error('Error: Failed to fetch categories');
       }
 
-      return fulfillWithValue(response.data);
+      return response.data;
     } catch (error) {
       return rejectWithValue(error);
     }

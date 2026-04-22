@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react';
 import { fetchProducts } from '../../redux/slices/productsSlice';
 import { fetchCategories } from '../../redux/slices/categoriesSlice';
 import Breadcrumbs from '../../components/ui/breadCrumbs';
-import Button from '../../components/ui/button'
+import Button from '../../components/ui/button';
 import styles from './styles.module.css';
 import { addToCart } from '../../redux/slices/cartSlice';
+import { BASE_URL } from '../../constants/config';
 
 function ProductPage() {
   const { productId } = useParams();
@@ -34,8 +35,6 @@ function ProductPage() {
   const discountPercent = hasDiscount
     ? Math.round((1 - product.discont_price / product.price) * 100)
     : 0;
-
-  const BASE_URL = 'http://127.0.0.1:3333';
 
   return (
     <div className={styles.container}>

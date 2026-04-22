@@ -1,10 +1,9 @@
 import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
-import Button from '../ui/button'
+import Button from '../ui/button';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../redux/slices/cartSlice';
-
-const BASE_URL = 'http://127.0.0.1:3333';
+import { BASE_URL } from '../../constants/config';
 
 function ProductItem({ product }) {
   const dispatch = useDispatch();
@@ -14,8 +13,8 @@ function ProductItem({ product }) {
     ? Math.round((1 - product.discont_price / product.price) * 100)
     : 0;
 
-    const { items } = useSelector((state) => state.cart);
-    const isInCart = items.some((item) => item.id === product.id);
+  const { items } = useSelector((state) => state.cart);
+  const isInCart = items.some((item) => item.id === product.id);
 
   return (
     <Link to={`/products/${product.id}`} className={styles.productItem}>

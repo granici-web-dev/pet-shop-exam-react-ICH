@@ -1,8 +1,9 @@
 import styles from './styles.module.css';
 
-function Button({ title, onClick, className, isAdded }) {
+function Button({ type = 'button', title, onClick, className, isAdded }) {
   return (
     <button
+      type={type}
       className={`${styles.primaryBtn} ${isAdded ? styles.added : ''} ${className || ''}`}
       onClick={onClick}>
       {title}

@@ -1,23 +1,25 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const API_URL = 'http://127.0.0.1:3333';
 
-export const fetchProducts = createAsyncThunk('products/fetchProducts', async (_, {fulfillWithValue, rejectWithValue}) => {
-  try {
-    const response = await axios.get(`${API_URL}/products/all`);
+export const fetchProducts = createAsyncThunk(
+  'products/fetchProducts',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${API_URL}/products/all`);
 
-    if (response.status > 399) {
-      console.log('client error');
-      throw new Error('Error: Failed to fetch categories');
+      if (response.status > 399) {
+        console.log('client error');
+        throw new Error('Error: Failed to fetch categories');
+      }
+
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error);
     }
-
-    return fulfillWithValue(response.data)
-
-  } catch (error) {
-    return rejectWithValue(error)
-  }
-})
+  },
+);
 
 const initialState = {
   products: [],
@@ -25,7 +27,7 @@ const initialState = {
   isError: false,
   isSuccess: false,
   message: '',
-}
+};
 
 const productsSlice = createSlice({
   name: 'products',
@@ -35,12 +37,12 @@ const productsSlice = createSlice({
     builder.addCase(fetchProducts.pending, (state) => {
       state.isLoading = true;
       state.isError = false;
-    })
+    });
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
       state.isLoading = false;
       state.isSuccess = true;
       state.products = action.payload;
-    })
+    });
     builder.addCase(fetchProducts.rejected, (state, action) => {
       state.isLoading = false;
       state.isError = true;

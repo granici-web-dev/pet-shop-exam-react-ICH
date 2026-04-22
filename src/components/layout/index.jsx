@@ -8,9 +8,7 @@ function Layout() {
     <div className={styles.layout}>
       <Header />
       <main>
-        <div className={styles.container}>
-          <Outlet />
-        </div>
+        <Outlet />
       </main>
       <Footer />
     </div>

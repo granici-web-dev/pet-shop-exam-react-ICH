@@ -4,8 +4,7 @@ import Input from '../ui/input';
 import { validationFormInputs } from '../../validator/validatorGetDiscrount';
 import SecondaryButton from '../ui/secondaryButton';
 import axios from 'axios';
-
-const API_URL = 'http://127.0.0.1:3333';
+import { BASE_URL } from '../../constants/config';
 
 function DiscountForm() {
   const { name, phone, email } = validationFormInputs;
@@ -19,7 +18,7 @@ function DiscountForm() {
 
   const getDiscount = async (data) => {
     try {
-      const response = await axios.post(`${API_URL}/sale/send`, data);
+      const response = await axios.post(`${BASE_URL}/sale/send`, data);
       console.log(response.data);
       reset();
     } catch (error) {

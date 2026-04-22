@@ -1,7 +1,6 @@
 import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
-
-const BASE_URL = 'http://127.0.0.1:3333';
+import { BASE_URL } from '../../constants/config';
 
 function CategoryItem({ item }) {
   return (

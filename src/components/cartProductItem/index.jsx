@@ -1,8 +1,7 @@
 import styles from './styles.module.css';
 import { incrementCount, decrementCount, removeFromCart } from '../../redux/slices/cartSlice';
 import { useDispatch } from 'react-redux';
-
-const BASE_URL = 'http://127.0.0.1:3333';
+import { BASE_URL } from '../../constants/config';
 
 function CartProductItem({ item }) {
   const dispatch = useDispatch();
